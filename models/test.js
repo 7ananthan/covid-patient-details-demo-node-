@@ -2,8 +2,7 @@ var mongoose =require('mongoose');
 
 const testSchema = new mongoose.Schema(
     {
-        userId:String, 
-        testResults:Number,
+        testResults:String,
         date:String,
         patientId:String,
         varifiedDoc:String
