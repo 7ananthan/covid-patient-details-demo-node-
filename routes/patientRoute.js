@@ -91,9 +91,9 @@ patientRouter.post("/searchpatient",(req,res)=>{
             },
             {
                 $lookup :{
-                    from:"test",
-                    localField:"userId",
-                    foreignField:"userId",
+                    from:"tests",
+                    localField:"_id",
+                    foreignField:"patientId",
                     as :"patientdetails"
                 }
             }
