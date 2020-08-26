@@ -102,7 +102,7 @@ patientRouter.post("/searchpatient",(req,res)=>{
         }
     )
 })
-patientRouter.post("/allpatient",(req,res)=>{
+patientRouter.get("/allpatient",(req,res)=>{
     patientModel.aggregate(
         [
             
