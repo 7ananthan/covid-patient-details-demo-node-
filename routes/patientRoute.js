@@ -102,5 +102,21 @@ patientRouter.post("/searchpatient",(req,res)=>{
         }
     )
 })
-
+patientRouter.post("/allpatient",(req,res)=>{
+    patientModel.aggregate(
+        [
+            
+            {
+                $lookup :{
+                    from:"tests",
+                    localField:"_id",
+                    foreignField:"patientId",
+                    as :"patientdetails"
+                }
+            }
+        ], (error,data)=>{
+            return res.json(data);
+        }
+    )
+})
 module.exports = patientRouter
